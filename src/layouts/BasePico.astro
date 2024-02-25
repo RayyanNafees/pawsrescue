@@ -7,7 +7,7 @@ export interface Props {
   title?: string
 }
 
-const { viewTransitions = true, requireInputs = true, title } = Astro.props
+const { viewTransitions = true, requireInputs = false, title } = Astro.props
 ---
 
 <!doctype html>
@@ -42,7 +42,6 @@ const { viewTransitions = true, requireInputs = true, title } = Astro.props
     <main class='container'>
       <slot />
     </main>
-    <noscript> You need to enable JavaScript to run this app.</noscript>
 
     {requireInputs && <script src='../lib/requireAllInputs.ts' />}
   </body>
