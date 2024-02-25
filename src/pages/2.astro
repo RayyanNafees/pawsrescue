@@ -12,7 +12,7 @@ if (Astro.request.method == 'POST') {
   const condition_of_dog = formData.get('condition_of_dog')?.toString()
   // const {userUid, number_of_dogs, condition_of_dog} = Object.fromEntries((await request.formData()).entries())
 
-  uid= userUid
+  uid = userUid
 
   const response = await db
     .collection('reports')
@@ -32,8 +32,8 @@ if (Astro.request.method == 'POST') {
   <div class='form'>
     <h1>Extra information</h1>
     <p class='steps'>Step 2 of 3</p>
-    <form transition:persist action="/3" method="POST">
-      <input type="hidden" name="userUid", value={uid}>
+    <form transition:persist action='/3' method='POST'>
+      <input type='hidden' name='userUid' , value={uid} />
       <label html-for='type'>
         <legend>What type of dog is it?</legend>
         <input
@@ -47,15 +47,15 @@ if (Astro.request.method == 'POST') {
         <legend>How big is the dog?</legend>
         <div class='checkbox-container'>
           <label html-for='small' class='checkbox'>
-            <input type='checkbox' id='small' name='size' />
+            <input type='checkbox' id='small' name='small' />
             Small
           </label>
           <label html-for='middle' class='checkbox'>
-            <input type='checkbox' id='middle' name='size' />
+            <input type='checkbox' id='middle' name='middle' />
             Middle
           </label>
           <label html-for='big' class='checkbox'>
-            <input type='checkbox' id='big' name='size' />
+            <input type='checkbox' id='big' name='big' />
             Big
           </label>
         </div>
@@ -69,7 +69,7 @@ if (Astro.request.method == 'POST') {
           name='time'
         />
       </label>
-      <Footer prev='/1'  />
+      <Footer prev='/1' />
     </form>
   </div>
 </HeaderLayout>
