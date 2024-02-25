@@ -1,26 +1,40 @@
 ---
 import HeaderLayout from '@/layouts/HeaderLayout.astro'
 import Footer from '@/components/Footer.astro'
+
+import { signInAnonymously, type User } from 'firebase/auth'
+import { auth } from '@/firebase/client'
+
+let newUser: Partial<User> = { uid: auth.currentUser?.uid }
+
+if (!newUser.uid) {
+  const { user } = await signInAnonymously(auth)
+
+  newUser = Object.assign(newUser, user.toJSON())
+
+  console.log('user ID', newUser.uid)
+}
 ---
 
 <HeaderLayout>
   <div class='form'>
     <h1>Who needs help?</h1>
     <p class='steps'>Step 1 of 3</p>
-    <form transition:persist>
+    <form transition:persist action='/2' method='POST'>
+      <input type='hidden' name='userUid' value={newUser.uid} />
       <fieldset>
         <legend>How many dogs need help?</legend>
         <div class='radio-btn'>
           <label html-for='one'>
-            <input type='radio' id='one' name='number_of_dogs' />
+            <input type='radio' id='one' name='number_of_dogs' value='1' />
             1
           </label>
           <label html-for='two'>
-            <input type='radio' id='two' name='number_of_dogs' />
+            <input type='radio' id='two' name='number_of_dogs' value='2' />
             2
           </label>
           <label html-for='more'>
-            <input type='radio' id='more' name='number_of_dogs' />
+            <input type='radio' id='more' name='number_of_dogs' value='more' />
             more
           </label>
         </div>
@@ -28,27 +42,52 @@ import Footer from '@/components/Footer.astro'
       <fieldset class='checkbox-container large'>
         <legend>Condition of the dog?</legend>
         <label html-for='good'>
-          <input type='checkbox' id='good' name='condition_of_dog' />
+          <input
+            type='checkbox'
+            id='good'
+            name='condition_of_dog'
+            value='good'
+          />
           Good
         </label>
         <label html-for='anxious'>
-          <input type='checkbox' id='anxious' name='condition_of_dog' />
+          <input
+            type='checkbox'
+            id='anxious'
+            name='condition_of_dog'
+            value='anxious'
+          />
           Anxious
         </label>
         <label html-for='aggressive'>
-          <input type='checkbox' id='aggressive' name='condition_of_dog' />
+          <input
+            type='checkbox'
+            id='aggressive'
+            name='condition_of_dog'
+            value='agressive'
+          />
           Agressive
         </label>
         <label html-for='wounded'>
-          <input type='checkbox' id='wounded' name='condition_of_dog' />
+          <input
+            type='checkbox'
+            id='wounded'
+            name='condition_of_dog'
+            value='wounded'
+          />
           Wounded
         </label>
         <label html-for='unknown'>
-          <input type='checkbox' id='unknown' name='condition_of_dog' />
+          <input
+            type='checkbox'
+            id='unknown'
+            name='condition_of_dog'
+            value='unknown'
+          />
           Unknown
         </label>
       </fieldset>
-      <Footer next='/2' prev='/' />
+      <Footer prev='/' />
     </form>
   </div>
 </HeaderLayout>

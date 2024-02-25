@@ -1,21 +1,48 @@
 ---
 import HeaderLayout from '@/layouts/HeaderLayout.astro'
 import Footer from '@/components/Footer.astro'
+import db from '@/firebase/server'
+
+let uid = ''
+
+if (Astro.request.method == 'POST') {
+  const formData = await Astro.request.formData()
+  const userUid = formData.get('userUid')?.toString() || ''
+  const dogType = formData.get('type')?.toString() || `${Date.now()}`
+  const dogSize = formData.get('size')?.toString()
+  const incidentTime = formData.get('time')?.toString()
+  // const {dogType, dogSize, incidentTime} = Object.fromEntries((await request.formData()).entries())
+
+  uid=userUid
+
+  const response = await db
+    .collection('reports')
+    .doc(userUid)
+    .update({
+      dogType,
+      dogSize,
+      incidentTime,
+    })
+    .catch(console.error)
+
+  console.log('response time: ', response?.writeTime)
+}
 ---
 
 <HeaderLayout>
   <div class='form'>
     <h1>Where is the dog?</h1>
     <p class='steps'>Step 3 of 3</p>
-    <form transition:persist>
+    <form transition:persist id="mapform" action="/success" method="POST">
+      <input type="hidden" name="userUid" value={uid}>
       <div class='map-sidebar'>
         Longitude: {0} | Latitude: {0} | Zoom: {100}
       </div>
       <div class='map-container'>
         <iframe width='100%' height='300' id='map'></iframe>
       </div>
+      <Footer prev='/2' />
     </form>
-    <Footer prev='/2' next='/4' />
   </div>
 </HeaderLayout>
 
@@ -24,7 +51,7 @@ import Footer from '@/components/Footer.astro'
   const map = document.getElementById('map') as HTMLImageElement
   const mapSidebar = document.querySelector('.map-sidebar') as HTMLDivElement
 
-  if ('geolocation' in navigator) {
+  if ('geolocation' in navigator)
     navigator.geolocation.getCurrentPosition((position) => {
       console.log(position)
 
@@ -33,8 +60,9 @@ import Footer from '@/components/Footer.astro'
 
       map.src = `https://maps.google.com/maps?q=${latitude},${longitude}&output=embed`
       mapSidebar.innerHTML = `Longitude: ${longitude} | Latitude: ${latitude} | Zoom: ${zoom}`
+
+      document.querySelector<HTMLFormElement>('#mapform')!.action +=
+        `?lat=${latitude}&long=${longitude}`
     })
-  } else {
-    map.remove()
-  }
+  else map.remove()
 </script>

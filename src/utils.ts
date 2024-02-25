@@ -1,11 +1,9 @@
 import state, { type State } from './store'
-
+import type { AstroGlobal } from 'astro'
 export const afterSwap = () => {
   console.log({ state: state.get() })
 
-  const inputs = document.querySelectorAll(
-    'input'
-  ) as NodeListOf<HTMLInputElement>
+  const inputs = document.querySelectorAll<HTMLInputElement>('input')
   for (const input of inputs) {
     const name = input.name as keyof State
 
@@ -19,8 +17,8 @@ export const afterSwap = () => {
 export const pageLoad = () => {
   const list = document.querySelector('ul.menu-links')
   const bg = document.querySelector('div.menu-bg')
-  const menu = document.querySelector<HTMLElement>('#menu-btn')
-  const links = document.querySelectorAll<HTMLElement>('a.nav-link')
+  const menu = document.querySelector<HTMLDivElement>('#menu-btn')
+  const links = document.querySelectorAll<HTMLAnchorElement>('a.nav-link')
 
   const hide = () => {
     bg?.classList.remove('show')
@@ -44,5 +42,8 @@ export const pageLoad = () => {
     link.onfocus = show
   }
 }
+
+export const base = (url: string, Astro: AstroGlobal) =>
+  `${Astro.site?.protocol}://${Astro.url.origin}/${url}`
 
 export default afterSwap
