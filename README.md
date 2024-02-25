@@ -1,47 +1,39 @@
-# Description
+# Animal Rescue Web App
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+The Animal Rescue Web App is a platform designed to facilitate the reporting and rescue of animals in need of medical attention. This project aims to streamline the process of identifying and assisting distressed animals by harnessing the power of technology and community involvement.
 
-This app will help abandoned animals get help from Animal welfare organizations
-all over the world when people reporting them via this app.
+## Features
 
+- **Report an Animal in Need**: Users can easily report animals in distress by filling out a simple form, providing details such as the number of animals, their condition, type, and size.
+  
+- **Google Maps Integration**: The app utilizes Google Maps to accurately pinpoint the location of reported animals, making it easier for rescue teams to locate and assist them.
 
+- **Notification System**: NGOs and rescue organizations receive instant notifications about reported animals in their area, enabling them to mobilize quickly and provide the necessary medical attention.
 
+## How to Use
 
-The idea is that when reporting an animal, the user will start filling out a form
-about the animal's situation and location.
-If people want to leave their contact information in the last stage, this should
-give them the possibility to stay connected with the NGOs and get information
-about the condition of the animal.
-When submitting the form, the form should be sent to the nearest NGO station.
+1. **Reporting an Animal**:
+   - Visit the Animal Rescue Web App website.
+   - Click on the "Report" button.
+   - Fill out the form with relevant information about the animal's condition and location.
+   - Submit the form.
 
-
-
-## Demo
-
-Live view by clicking the badge: [![Netlify Status](https://api.netlify.com/api/v1/badges/f9a7f8d3-58ca-44ed-a038-ae8d2efd31a5/deploy-status)](https://sos-animal.netlify.app/)
-
-You can also clone the project and open it in localhost, or enjoy the preview
-video below instead :smile:
-
-https://user-images.githubusercontent.com/54622834/127658950-b1964a1c-dfc3-4853-be04-9c14a35f569c.mov
-
-# Contribution
-
-To contribute to this project please check out the [contribution guidelines].
-
-## Prerequisits
-
-Before cloning/forking this project, make sure you have the following tools installed:
-
-- [Git](https://git-scm.com/downloads)
-- [NodeJS](https://nodejs.org/en/download/)
+2. **NGO Response**:
+   - NGOs and rescue organizations receive notifications about reported animals in their area.
+   - Upon receiving a notification, they can dispatch rescue teams to provide medical assistance to the animals in need.
 
 ## Installation
 
-1. Fork the project
-2. Clone the project
-3. Follow the instructions in the console:
-   1. Navigate to the project directory `cd astro-sos`
-   2. Install the dependencies `pnpm install`
-   3. Run the project `pnpm dev --open`
+Users can access the app through a web browser on their desktop or mobile devices.
+
+## Team
+- Rayaan Nafees
+- Sharjeel Afridi 
+
+## Contact
+
+For questions, feedback, or support, please contact [afridisharjeel8@gmail.com.com](mailto:afridisharjeel8@gmail.com).
+
+---
+
+Together, let's make a difference for animals in need!
