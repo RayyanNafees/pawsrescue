@@ -1,10 +1,12 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
-import netlify from "@astrojs/netlify";
+import netlify from '@astrojs/netlify/functions'
 
 // https://astro.build/config
 export default defineConfig({
   prefetch: true,
-  output: "hybrid",
-  adapter: netlify()
-});
+  output: 'hybrid',
+  adapter: netlify({
+    edgeMiddleware: true,
+  }),
+})
