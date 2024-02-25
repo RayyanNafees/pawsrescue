@@ -26,6 +26,8 @@ The Animal Rescue Web App is a platform designed to facilitate the reporting and
 
 Users can access the app through a web browser on their desktop or mobile devices.
 
+For running the project locally checkout our [installation guide](installation.md)
+
 ## Team
 - Rayyan Nafees
 - Sharjeel Afridi 
