@@ -34,7 +34,7 @@ if (Astro.request.method == 'POST') {
   <div class='form'>
     <h1>Extra information</h1>
     <p class='steps'>Step 2 of 3</p>
-    <form transition:persist action='/3' method='POST'>
+    <form transition:persist action='/3/' method='POST'>
       <input type='hidden' name='userUid' , value={uid} />
       <label html-for='type'>
         <legend>What type of dog is it?</legend>

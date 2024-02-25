@@ -20,7 +20,7 @@ if (!newUser.uid) {
   <div class='form'>
     <h1>Who needs help?</h1>
     <p class='steps'>Step 1 of 3</p>
-    <form transition:persist action='/2' method='POST'>
+    <form transition:persist action='/2/' method='POST'>
       <input type='hidden' name='userUid' value={newUser.uid} />
       <fieldset>
         <legend>How many dogs need help?</legend>

@@ -42,7 +42,7 @@ if (Astro.request.method == 'POST') {
   <div class='form'>
     <h1>Where is the dog?</h1>
     <p class='steps'>Step 3 of 3</p>
-    <form transition:persist id='mapform' action='/success' method='POST'>
+    <form transition:persist id='mapform' action='/success/' method='POST'>
       <input type='hidden' name='userUid' value={uid} />
       <div class='map-sidebar'>
         Longitude: {0} | Latitude: {0} | Zoom: {100}
