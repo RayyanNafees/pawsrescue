@@ -1,4 +1,4 @@
-# Animal Rescue Web App
+# Paws Rescue
 
 The Animal Rescue Web App is a platform designed to facilitate the reporting and rescue of animals in need of medical attention. This project aims to streamline the process of identifying and assisting distressed animals by harnessing the power of technology and community involvement.
 
