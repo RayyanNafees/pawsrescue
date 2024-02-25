@@ -1,12 +1,12 @@
 ---
+import type { AstroGlobal } from 'astro'
 import '../styles/index.scss'
 import { ViewTransitions } from 'astro:transitions'
 
-interface Props {
+export interface Props {
   title?: string
 }
 
-export const title = Astro.props?.title
 ---
 
 <!doctype html>
@@ -32,7 +32,7 @@ export const title = Astro.props?.title
 
     <link rel='manifest' href='/manifest.json' />
 
-    <title>{title ? title + ' | ' : ''}Rescue Me</title>
+    <title>Rescue Me</title>
     <ViewTransitions />
     <noscript>You need to enable JavaScript to run this app.</noscript>
   </head>

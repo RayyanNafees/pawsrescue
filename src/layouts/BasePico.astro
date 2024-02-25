@@ -34,15 +34,16 @@ const { viewTransitions = true, requireInputs = true, title } = Astro.props
     <link rel='manifest' href='/manifest.json' />
     <link rel='stylesheet' href='https://unpkg.com/@picocss/pico' />
 
-    <title>{title ? title + ' | ' : ''}Rescue Me</title>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <title>{title ? `${title} | Rescue Me` : 'Rescue Me'}</title>
     {viewTransitions && <ViewTransitions />}
   </head>
+
   <body>
     <main class='container'>
       <slot />
     </main>
+    <noscript> You need to enable JavaScript to run this app.</noscript>
 
-    {requireInputs && <script src='../lib/requireAllInputs.ts'></script>}
+    {requireInputs && <script src='../lib/requireAllInputs.ts' />}
   </body>
 </html>

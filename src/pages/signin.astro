@@ -1,10 +1,8 @@
 ---
-import { app } from '@/firebase/server'
-import { getAuth } from 'firebase-admin/auth'
+import { auth } from '@/firebase/server'
 import Layout from '@/layouts/Base.astro'
 
 /* Check if the user is authenticated */
-const auth = getAuth(app)
 if (Astro.cookies.has('session')) {
   const sessionCookie = Astro.cookies.get('session')?.value || ''
   const decodedCookie = await auth.verifySessionCookie(sessionCookie)
@@ -34,9 +32,8 @@ if (Astro.cookies.has('session')) {
     GoogleAuthProvider,
     signInWithPopup,
   } from 'firebase/auth'
-  import { app } from '@/firebase/client'
+  import { auth } from '@/firebase/client'
 
-  const auth = getAuth(app)
   auth.setPersistence(inMemoryPersistence)
 
   const form = document.querySelector('form') as HTMLFormElement
