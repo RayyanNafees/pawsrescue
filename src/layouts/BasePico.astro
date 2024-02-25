@@ -1,4 +1,5 @@
 ---
+import '@picocss/pico'
 import { ViewTransitions } from 'astro:transitions'
 
 export interface Props {
@@ -26,13 +27,12 @@ const { viewTransitions = true, requireInputs = false, title } = Astro.props
     />
     <meta property='og:title' content='Astro SOS Animals' />
     <meta property='og:type' content='website' />
-    <meta property='og:url' content='https://astro-sos.netlify.app/' />
+    <meta property='og:url' content='https://pawsrescue.netlify.app/' />
     <meta property='og:image' content='/thumbnail-sos.png' />
     <meta property='og:determiner' content='' />
     <meta property='og:locale' content='en_US' />
 
     <link rel='manifest' href='/manifest.json' />
-    <link rel='stylesheet' href='https://unpkg.com/@picocss/pico' />
 
     <title>{title ? `${title} | Paws Rescue` : 'Paws Rescue'}</title>
     {viewTransitions && <ViewTransitions />}
@@ -43,6 +43,6 @@ const { viewTransitions = true, requireInputs = false, title } = Astro.props
       <slot />
     </main>
 
-    {requireInputs && <script src='../lib/requireAllInputs.ts' />}
+    {requireInputs && <script src='@/lib/requireAllInputs.ts' />}
   </body>
 </html>

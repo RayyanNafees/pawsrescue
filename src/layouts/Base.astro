@@ -1,6 +1,6 @@
 ---
 import type { AstroGlobal } from 'astro'
-import '../styles/index.scss'
+import '@/styles/index.css'
 import { ViewTransitions } from 'astro:transitions'
 
 export interface Props {
@@ -25,7 +25,7 @@ export interface Props {
     />
     <meta property='og:title' content='Astro SOS Animals' />
     <meta property='og:type' content='website' />
-    <meta property='og:url' content='https://astro-sos.netlify.app/' />
+    <meta property='og:url' content='https://pawsrescue.netlify.app/' />
     <meta property='og:image' content='/thumbnail-sos.png' />
     <meta property='og:determiner' content='' />
     <meta property='og:locale' content='en_US' />
@@ -37,6 +37,6 @@ export interface Props {
   </head>
   <body>
     <slot />
-    <!-- <script src='../lib/requireAllInputs.ts'></script> -->
+    <!-- <script src='@/lib/requireAllInputs.ts'></script> -->
   </body>
 </html>

@@ -17,18 +17,12 @@ dependencies:
   astro:
     specifier: ^4.4.4
     version: 4.4.4(sass@1.71.1)(typescript@5.3.3)
-  astro-htmx:
-    specifier: ^1.0.5
-    version: 1.0.5(astro@4.4.4)(htmx.org@1.9.10)
   firebase:
     specifier: ^10.8.0
     version: 10.8.0
   firebase-admin:
     specifier: ^12.0.0
     version: 12.0.0
-  htmx.org:
-    specifier: ^1.9.10
-    version: 1.9.10
   nanostores:
     specifier: ^0.10.0
     version: 0.10.0
@@ -1793,16 +1787,6 @@ packages:
     dev: false
     optional: true
 
-  /astro-htmx@1.0.5(astro@4.4.4)(htmx.org@1.9.10):
-    resolution: {integrity: sha512-lTwGy5sMyvp6+O6UiSQEXrEWimRpPi16mMBbQTWUshWrGklCpYbtho6eaZVonFcB9ue7Y7FjTTPiYfp0hUUEuQ==}
-    peerDependencies:
-      astro: '>= 3.0.0'
-      htmx.org: '>= 1.9.0'
-    dependencies:
-      astro: 4.4.4(sass@1.71.1)(typescript@5.3.3)
-      htmx.org: 1.9.10
-    dev: false
-
   /astro@4.4.4(sass@1.71.1)(typescript@5.3.3):
     resolution: {integrity: sha512-EZrDTN888w4sFKqavGsHu8jSaymyxNwnoqIq5NKlMG9WNU/Xn4Yn41pUdBuAOrgNzRp1NyXXhhV6GV1pN71V2Q==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
@@ -3060,10 +3044,6 @@ packages:
 
   /html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
-    dev: false
-
-  /htmx.org@1.9.10:
-    resolution: {integrity: sha512-UgchasltTCrTuU2DQLom3ohHrBvwr7OqpwyAVJ9VxtNBng4XKkVsqrv0Qr3srqvM9ZNI3f1MmvVQQqK7KW/bTA==}
     dev: false
 
   /http-cache-semantics@4.1.1:

@@ -1,5 +1,5 @@
 import state, { type State } from './store'
-import type { AstroGlobal } from 'astro'
+
 export const afterSwap = () => {
   console.log({ state: state.get() })
 

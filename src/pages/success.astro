@@ -8,14 +8,14 @@ if (Astro.request.method == 'POST') {
 
   const latitude = +Astro.url.searchParams.get('lat')!
   const longitude = +Astro.url.searchParams.get('long')!
- 
+
   const response = await db
     .collection('reports')
     .doc(userUid)
     .update({
       userUid,
       latitude,
-      longitude
+      longitude,
     })
     .catch(console.error)
 

@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import htmx from 'astro-htmx';
 
 import netlify from "@astrojs/netlify";
 
