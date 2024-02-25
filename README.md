@@ -27,12 +27,12 @@ The Animal Rescue Web App is a platform designed to facilitate the reporting and
 Users can access the app through a web browser on their desktop or mobile devices.
 
 ## Team
-- Rayaan Nafees
+- Rayyan Nafees
 - Sharjeel Afridi 
 
 ## Contact
 
-For questions, feedback, or support, please contact [afridisharjeel8@gmail.com.com](mailto:afridisharjeel8@gmail.com).
+For questions, feedback, or support, please contact [afridisharjeel8@gmail.com.com](mailto:afridisharjeel8@gmail.com) [nafees.rayyan@gmail.com](mailto:nafees.rayyan@gmail.com).
 
 ---
 
