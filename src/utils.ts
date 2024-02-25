@@ -43,7 +43,4 @@ export const pageLoad = () => {
   }
 }
 
-export const base = (url: string, Astro: AstroGlobal) =>
-  `${Astro.site?.protocol}://${Astro.url.origin}/${url}`
-
 export default afterSwap

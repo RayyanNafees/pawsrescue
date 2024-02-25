@@ -6,8 +6,8 @@ if (Astro.request.method == 'POST') {
   const formData = await Astro.request.formData()
   const userUid = formData.get('userUid')?.toString() || ''
 
-  const latitude = Astro.url.searchParams.get('lat')
-  const longitude = Astro.url.searchParams.get('long')
+  const latitude = +Astro.url.searchParams.get('lat')!
+  const longitude = +Astro.url.searchParams.get('long')!
  
   const response = await db
     .collection('reports')

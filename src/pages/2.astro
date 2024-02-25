@@ -8,8 +8,10 @@ let uid = ''
 if (Astro.request.method == 'POST') {
   const formData = await Astro.request.formData()
   const userUid = formData.get('userUid')?.toString() || `${Date.now()}`
-  const number_of_dogs = formData.get('number_of_dogs')?.toString()
-  const condition_of_dog = formData.get('condition_of_dog')?.toString()
+  const number_of_dogs: string | number = formData
+    .get('number_of_dogs')
+    ?.toString()!
+  const condition_of_dog = formData.getAll('condition_of_dog').toSorted()
   // const {userUid, number_of_dogs, condition_of_dog} = Object.fromEntries((await request.formData()).entries())
 
   uid = userUid
@@ -19,7 +21,7 @@ if (Astro.request.method == 'POST') {
     .doc(userUid)
     .set({
       userUid,
-      number_of_dogs,
+      number_of_dogs: +number_of_dogs || number_of_dogs, // 1,2, "more" (not "1" "2" "more")
       condition_of_dog,
     })
     .catch(console.error)
